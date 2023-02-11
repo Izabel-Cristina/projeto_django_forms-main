@@ -120,16 +120,16 @@
                 <div class="card vh-75 vw-10">
                     <ul>
                         {% for post in promocao %}
-                        <li class="col-md-12">
-                            <h5>{{ post.titulo }}</h5>
-                            <img src="{{post.image_capa.url}}" class="card-img-top justify-content-center"
+                        <li class="col-md-12 py-4">
+                            <h4>{{ post.titulo }}</h4>
+                            <img srcset="{{post.image_capa.url}}" class="card-img-top justify-content-center"
                                  alt="imagem do card"></a>
                             <h6>{{ post.conteudo }}</h6>
                         </li>
                         {% endfor %}
-
                     </ul>
                 </div>
+
             </div>
         </div>
     </div>
