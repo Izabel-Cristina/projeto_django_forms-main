@@ -1,0 +1,32 @@
+<main class="bg-light">
+    <div class="container-fluid">
+        <div class="col-xl-5 col-md-6">
+            <!--Formulario-->
+            <form method="post">
+                <!--Para segurança -->
+                {% csrf_token %}
+                <div class="card border-0 px-sm-0 p-md-5 mt-3">
+                    {% if mesages %}
+                    {% for message in messages %}
+                    {% if message.tags %}
+                    <div class="alert alert-sucess" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                    <div class="card-head bg-white border-0">
+                        <h1 class="text-success text-center">Contato</h1>
+                    </div>
+
+                    {{ form }}
+
+                    <div class="card-footer p-0 pt-3 bg-white border-0">
+                        <button type="submit" class="btn btn-success col-12">Enviar mensagem</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</main>

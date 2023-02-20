@@ -13,3 +13,22 @@ class Promocoes(models.Model):
 
 def __str__(self):
     return self.titulo
+
+
+CHOICES_ASSUNTOS = [
+    ('', 'Selecione um assunto'),
+    ('reserva', 'Reserva'),
+    ('promoções', 'Promoções'),
+    ('campeonatos de pesca', 'Campeonatos de Pesca'),
+    ('dúvidas', 'Dúvidas'),
+    ('elogios', 'Elogios'),
+    ('reclamações', 'Reclamações')
+]
+
+# Create your models here.
+class Contato(models.Model):
+    assunto = models.CharField(choices=CHOICES_ASSUNTOS, default="", max_length=100)
+    primeiro_nome = models.CharField(max_length=100)
+    ultimo_nome = models.CharField(max_length=100)
+    email =models.EmailField(max_length=100)
+    mensagem = models.TextField(max_length=1000)
